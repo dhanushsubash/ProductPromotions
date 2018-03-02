@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ProductService } from '../product.service';
 import { Product } from '../product';
 import { CurrencyPipe } from '@angular/common';
@@ -15,6 +15,7 @@ export class AddProductComponent implements OnInit {
   deleted: Product;
   productList: Product[];
   @ViewChild('frm') form: any;
+  @ViewChild('name') name: ElementRef;
   constructor(private service: ProductService) { }
 
   ngOnInit() {
@@ -37,5 +38,7 @@ export class AddProductComponent implements OnInit {
     this.form.reset();
   }
 
-  
+  edit(data) {
+    this.name.nativeElement.value = data.name;
+  }
 }

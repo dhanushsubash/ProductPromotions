@@ -1,0 +1,39 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Samsung",
+      "category": "mobile",
+      "price": 15200,
+      "details": "Smart Phone with Wifi, Back Camera"
+    },
+    {
+      "id": 3,
+      "name": "Lenova",
+      "category": "laptop",
+      "price": 36500,
+      "details": "With 8GB RAM 500 MB HDD"
+    },
+    {
+      "name": "Apple",
+      "category": "dhandam",
+      "price": "90000",
+      "details": "fake phone to take selfie",
+      "id": 5
+    },
+    {
+      "name": "s8+",
+      "category": "Mobile",
+      "price": 65000,
+      "details": "Best phone in the market",
+      "id": 6
+    },
+    {
+      "name": "Lenovo",
+      "category": "Laptop",
+      "price": 80000,
+      "details": "4GB AMD graphics, Full HD display",
+      "id": 7
+    }
+  ]
+}

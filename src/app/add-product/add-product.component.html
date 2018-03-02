@@ -1,0 +1,50 @@
+<h3 appInsert addText="<i>Product details</i>"></h3>
+<div>
+  <form #frm="ngForm" (ngSubmit)='submit(frm.value)'>
+    <div class="form-group row">
+      <label for="" class="col-2 col-form-label">NAME</label>
+      <input type="text" class="form-control col-sm-8" name="name" ngModel>
+    </div>
+    <div class="form-group row">
+      <label for="" class="col-2 col-form-label">CATEGORY</label>
+      <input type="text" class="form-control col-sm-8" name="category" ngModel>
+    </div>
+    <div class="form-group row">
+      <label for="" class="col-2 col-form-label">PRICE</label>
+      <input type="number" class="form-control col-sm-8" name="price" ngModel>
+    </div>
+    <div class="form-group row">
+      <label for="" class="col-2 col-form-label">DETAILS</label>
+      <input type="text" class="form-control col-sm-8" name="details" ngModel>
+    </div>
+    <div class="form-group">
+      <input type="submit" value="ADD" class="btn btn-success">
+    </div>
+  </form>
+</div>
+
+<div class="form-group row">
+  <label for="" class="col-2 col-form-label">Search</label>
+  <input type="search" class="form-control col-sm-8" placeholder="Search for a Product Name from the table" [(ngModel)]="searchCriteria">
+</div>
+
+<div>
+  <table class="table table-dark table-hover">
+    <tr>
+      <th>NAME</th>
+      <th>CATEGORY</th>
+      <th>PRICE</th>
+      <th>DETAILS</th>
+      <th>DELETE PRODUCT</th>
+      <th>EDIT DETAILS</th>
+    </tr>
+    <tr *ngFor="let prod of productList | orderBy:'price': false | productFilter: 'name': searchCriteria">
+      <td>{{prod.name | uppercase}}</td>
+      <td>{{prod.category}}</td>
+      <td>{{prod.price | currency}}</td>
+      <td>{{prod.details}}</td>
+      <td><input type="button" (click)="remove(prod)" value="DELETE" class="btn btn-danger"></td>
+      <td><input type="button" (click)="edit(prod)" value="EDIT" class="btn btn-info"></td>
+    </tr>
+  </table>
+</div>
